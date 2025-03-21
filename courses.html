@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f4f6f9;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 240px;
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .nav-link {
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-link i {
+      margin-right: 15px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: #00509e;
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 240px;
+      width: calc(100% - 240px);
+      padding: 30px;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      color: #003366;
+    }
+
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .course-content h3 {
+      color: #003366;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .course-content p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .course-content button {
+      background-color: #FF6B35;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .course-content button:hover {
+      background-color: #e14a2c;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>My Dashboard</h2>
+   <a href="dashboard.html" class="nav-link active"><i class="fas fa-th-large"></i> Dashboard</a>
+   <a href="courses.html" class="nav-link"><i class="fas fa-book"></i> Courses</a>
+   <a href="calendar.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Calendar</a>
+   <a href="dashboard.html" class="nav-link"><i class="fas fa-user"></i> Profile</a>
+   <a href="index.html" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Available Courses</h1>
+    </div>
+
+    <div class="courses-container">
+      <!-- Repeat these cards or add more as needed -->
+      <div class="course-card">
+        <img src="https://cdn.vectorstock.com/i/500p/85/40/artificial-intelligence-logo-icon-symbol-vector-31118540.jpg" alt="AI">
+        <div class="course-content">
+          <h3>Artificial Intelligence</h3>
+          <p>Learn AI fundamentals: ML, neural networks, intelligent systems, and more.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://www.classcentral.com/report/wp-content/uploads/2022/04/Deep-Learning-BCG-Featured-image.png" alt="Deep Learning">
+        <div class="course-content">
+          <h3>Deep Learning</h3>
+          <p>Dive into CNNs, RNNs, TensorFlow, PyTorch and model optimization.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://www.aalpha.net/wp-content/uploads/2019/07/cloud-computing-company-india.jpg" alt="Cloud">
+        <div class="course-content">
+          <h3>Cloud Computing</h3>
+          <p>Master AWS, Azure, DevOps, Kubernetes, and serverless technologies.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaq6k7VKlV8MkY9JhCaburiFllD2_baeAFaA&s" alt="IoT">
+        <div class="course-content">
+          <h3>Internet of Things</h3>
+          <p>Learn about IoT hardware, connectivity, sensors, and data analysis.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://www.neit.edu/wp-content/uploads/2022/10/Cyber-Security-Icon-Concept-2-1.jpeg" alt="Cybersecurity">
+        <div class="course-content">
+          <h3>Cybersecurity</h3>
+          <p>Protect systems with ethical hacking, security policies, and tools.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://itspectrumsolutions.com/wp-content/uploads/2024/04/1_pE2fOVDikEUwiQJlh4ggzg.jpeg" alt="Web Dev">
+        <div class="course-content">
+          <h3>Web Development</h3>
+          <p>Design and build modern full-stack web applications and APIs.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://img.icons8.com/clouds/100/000000/data-configuration.png" alt="Data Science">
+        <div class="course-content">
+          <h3>Data Science</h3>
+          <p>Data analytics, machine learning, and real-world business insights.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://img.icons8.com/clouds/100/000000/blockchain-technology.png" alt="Blockchain">
+        <div class="course-content">
+          <h3>Blockchain Development</h3>
+          <p>Develop decentralized apps and smart contracts on Ethereum & more.</p>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

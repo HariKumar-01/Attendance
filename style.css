@@ -132,6 +132,21 @@ nav ul li .logo img {
 .card button:hover {
   background: #E14A2C;
 }
+.progress-bar-bg {
+  background-color: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 12px;
+  margin-top: 10px;
+}
+
+.progress-bar-fill {
+  background-color: #28a745;
+  height: 100%;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
 
 .attendance {
   margin-top: 40px;
